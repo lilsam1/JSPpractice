@@ -1,7 +1,7 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ include file="conn_db.jsp" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%
 /* 전달 받은 글을 저장하고, 지정된 열의 num(자동증가 값, 데이터의 식별자)를 json으로 전달 */
 	request.setCharacterEncoding("UTF-8");

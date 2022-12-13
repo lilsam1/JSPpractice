@@ -7,7 +7,7 @@
 	try {
 		String url = "jdbc:mariadb://localhost:3308/sample_jsp_todo_ajax";
 		String user = "root";
-		String password = "1234";
+		String password = "1475";
 		
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
