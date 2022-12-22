@@ -2,12 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="market.dto.Product" %>
-<jsp:useBean id="productDAO" class="market.dao.ProductRepository" scope="session" />
+<%@ page import="market.dao.ProductRepository" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
-" rel="stylesheet" >
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" >
 <meta charset="UTF-8">
 <title>상품 목록</title>
 </head>
@@ -19,7 +19,8 @@
 		</div>
 	</div>
 	<% 
-		ArrayList<Product> listofProducts = productDAO.getAllProducts();
+		ProductRepository dao = ProductRepository.getInstance();
+		ArrayList<Product> listofProducts = dao.getAllProducts();
 	%>
 	
 	<div class="container">

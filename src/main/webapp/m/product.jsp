@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="market.dto.Product" %>
-<jsp:useBean id="productDAO" class="market.dao.ProductRepository" scope="session" />
+<%@ page import="market.dao.ProductRepository" %>>
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
-" rel="stylesheet" >
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" >
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -19,7 +18,8 @@
 	</div>
 	<%
 		String id = request.getParameter("id");
-		Product product = productDAO.getProductById(id);
+		ProductRepository dao = ProductRepository.getInstance();
+		Product product = dao.getProductById(id);
 	%>
 	<div class="container">
 		<div class="row">
