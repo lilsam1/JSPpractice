@@ -22,6 +22,7 @@ public class BookRepository {
 		history.setUnitsinStock(100);
 		history.setReleaseDate("2018/03/07");
 		history.setCondition("신규도서");
+		history.setFilename("B1111.jpg");
 		
 		Book novel = new Book("B1112", "해리포터와 불의 잔", 35000);
 		novel.setAuthor("j.k.롤링");
@@ -32,6 +33,7 @@ public class BookRepository {
 		novel.setUnitsinStock(120);
 		novel.setReleaseDate("2017/03/07");
 		novel.setCondition("중고도서");
+		novel.setFilename("B1112.jpg");
 		
 		Book it = new Book("B1113", "자바의 정석", 22000);
 		it.setAuthor("남궁성");
@@ -42,6 +44,7 @@ public class BookRepository {
 		it.setUnitsinStock(50);
 		it.setReleaseDate("2020/03/07");
 		it.setCondition("e-book");
+		it.setFilename("B1113.jpg");
 		
 		listOfBooks.add(history);
 		listOfBooks.add(novel);

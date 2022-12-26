@@ -93,6 +93,16 @@ public class Product {
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
+
+	/* 오류 확인용
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", pname=" + pname + ", unitPrice=" + unitPrice + ", description="
+				+ description + ", manufacture=" + manufacture + ", category=" + category + ", unitsInStock="
+				+ unitsInStock + ", condition=" + condition + ", filename=" + filename + "]";
+	}
+	*/
+	
 	
 	
 

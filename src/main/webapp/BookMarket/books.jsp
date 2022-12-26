@@ -30,6 +30,8 @@
 					Book book = listOfBooks.get(i);
 			%>
 			<div class="col-md-4">
+				<img src = "${pageContext.request.contextPath}/resources/images/<%=book.getFilename()%>"
+				style="width: 100%" alt="">
 				<h3>[<%=book.getCategory()%>] <%=book.getName()%></h3>
 				<p><%=book.getDescription()%></p>
 				<p><%=book.getAuthor()%> | <%=book.getPublisher()%> | <%=book.getUnitPrice()%>원</p>

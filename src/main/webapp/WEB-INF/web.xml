@@ -1,0 +1,26 @@
+<web-app>
+	<security-role>
+		<role-name>role1</role-name>
+	</security-role>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>FirstAuth</web-resource-name>
+			<url-pattern>/07_security/security.jsp</url-pattern>
+			<http-methoe>GET</http-methoe>
+		</web-resource-collection>
+		<auth-constraint>
+			<description></description>
+			<role-name>role1</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+	<!-- FORM 인증 처리 기법을 설정하도록 <auth-method> 요소를 작성 -->
+	<auth-method>FORM</auth-method>
+	<form-login-config>
+		<form-login-page>/07_security/login.jsp</form-login-page>
+		<form-error-page>/07_security/login_failed.jsp</form-error-page>
+	</form-login-config>
+	<!--/ FORM 인증 처리 기법을 설정하도록 <auth-method> 요소를 작성 -->
+	</login-config>
+</web-app>
