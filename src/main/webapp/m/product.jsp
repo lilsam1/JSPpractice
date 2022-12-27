@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="market.dto.Product" %>
-<%@ page import="market.dao.ProductRepository" %>>
+<%@ page import="market.dao.ProductRepository" %>
+<%@ page errorPage="exceptionNoProductId.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
