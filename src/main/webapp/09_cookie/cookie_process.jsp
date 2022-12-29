@@ -19,9 +19,9 @@
 	 	
 	 	if (user_id.equals("admin") && user_pw.equals("1234")) {
 	 		Cookie cookie_id = new Cookie("userID", user_id);
-	 		Cookie cookie_pw = new Cookie("userPW", user_pw);
+	 		
 	 		response.addCookie(cookie_id);
-	 		response.addCookie(cookie_pw);
+	 		
 	 		response.sendRedirect("welcome.jsp");
 	 	} else {
 	 		out.println("쿠키 생성이 실패했습니다");

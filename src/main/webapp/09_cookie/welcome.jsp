@@ -8,22 +8,19 @@
 </head>
 <body>
 	<%
-		boolean isLogin = false;
+		String userId = null;
 		Cookie[] cookies = request.getCookies();
 		for (int i = 0; i < cookies.length; i++) {
 			if(cookies[i].getName().equals("userID") && cookies[i].getValue() != null ) {
-				isLogin = true;
+				userId=cookies[i].getValue();
 			}
 		}
 		//out.print(isLogin);
-		if(isLogin) {
-			out.print("admin님 반갑습니다<br>");
+		if(userId == null) {
+			response.sendRedirect("cookie.jsp");
 		}
-		else {
-			out.print("로그인 상태가 아닙니다");
-		}
-		
 	%>
+	<h3><%=userId%>님 환영합니다"</h3>
 	<a href="cookie_out.jsp"> 로그아웃 </a>
 </body>
 </html>
