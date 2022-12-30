@@ -23,13 +23,13 @@
 		<div class="row">
 			<table width="100%">
 				<tr>
-					<td alingn="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a></td>
-					<td align="right"><a href="#" class="btn btn-success">주문하기</a></td>
+					<td alingn="left"><span class="btn btn-danger" onclick="deleteCart();">삭제하기</span></td>
+					<td align="right"><a href="./shippingInfo.jsp?cartId=<%= cartId%>" class="btn btn-success">주문하기</a></td>
 				</tr>
 			</table>
 		</div>
 		<div style="padding-top: 50px">
-			<table class="table table-hover">
+			<table class="table table-hover" >
 				<tr>
 					<th>상품</th>
 					<th>가격</th>
@@ -55,7 +55,7 @@
 					<td><%=product.getUnitPrice()%></td>
 					<td><%=product.getQuantity()%></td>
 					<td><%=total %></td>
-					<td><a href="./removeCart.jsp?id=<%=product.getProductId()%>" class="badge badge-danger">삭제</a></td>
+					<td><span class="badge badge-danger" onclick="removeCartByID('<%=product.getProductId()%>')">삭제</span></td>
 				</tr>
 				<%
 					}
@@ -70,6 +70,25 @@
 			</table>
 			<a href="./products.jsp" class="btn btn-secondary"> &laquo; 쇼핑 계속하기</a>
 		</div>
+		<form name="frmCart" method="post">
+			<input type="hidden" name="id">
+		</form>
+		<script>
+			const frm = document.frmCart;
+			let removeCartByID = function(ID) {
+				if(confirm('삭제하시겠습니까?')) {
+					frm.id.value = ID;
+					frm.action = "removeCart.jsp";
+					frm.submit();
+				}
+			}
+			let deleteCart = function() {
+				if(confirm('삭제하시겠습니까?')) {
+					frm.action = "deleteCart.jsp";
+					frm.submit();
+				}
+			}
+		</script>
 		<hr>
 	</div>
 	<jsp:include page="footer.jsp" />
