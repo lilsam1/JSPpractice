@@ -52,24 +52,49 @@
 	String fname = (String) files.nextElement();
 	String fileName = multi.getFilesystemName(fname);
 	
-	String sql = "insert into product value(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	String sql = "select * from product where p_id = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, productId);
-	pstmt.setString(2, name);
-	pstmt.setInt(3, price);
-	pstmt.setString(4, description);
-	pstmt.setString(5, category);
-	pstmt.setString(6, manufacture);
-	pstmt.setLong(7, stock);
-	pstmt.setString(8, condition);
-	pstmt.setString(9, fileName);
-	pstmt.executeUpdate();
+	rs = pstmt.executeQuery();
 	
+	if (rs.next()) {
+		if (fileName != null) {
+			sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacture=?, p_category=?, " 
+				+ "p_unitsInStock=?, p_condition=?, p_fileName=? WHERE p_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setInt(2, price);
+			pstmt.setString(3, description);
+			pstmt.setString(4, manufacture);
+			pstmt.setString(5, category);
+			pstmt.setLong(6, stock);
+			pstmt.setString(7, condition);
+			pstmt.setString(8, fileName);
+			pstmt.setString(9, productId);
+			pstmt.executeUpdate();
+		} else {
+			sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacture=?, p_category=?, " 
+					+ "p_unitsInStock=?, p_condition=? WHERE p_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setInt(2, price);
+			pstmt.setString(3, description);
+			pstmt.setString(4, manufacture);
+			pstmt.setString(5, category);
+			pstmt.setLong(6, stock);
+			pstmt.setString(7, condition);
+			pstmt.setString(8, productId);
+			pstmt.executeUpdate();
+		}		
+	}
+
+	if (rs != null)
+		rs.close();
 	if (pstmt != null)
 		pstmt.close();
 	if (conn != null)
 		conn.close();
 	
-	response.sendRedirect("products.jsp");
+	response.sendRedirect("editProduct.jsp?edit=update");
 	
 %>

@@ -48,7 +48,7 @@
 			<div class="form-group row">
 				<label class="col-sm-2">제조사</label>
 				<div class="col-sm-3">
-					<input type="text" name="Manufacture" class="form-control">
+					<input type="text" name="manufacture" class="form-control">
 				</div>
 			</div>
 			<div class="form-group row">
