@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" >
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css" >
 <meta charset="UTF-8">
 <title>상품 목록</title>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
+	<jsp:include page="../inc/menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">상품목록</h1>
@@ -17,7 +17,7 @@
 	</div>
 	<div class="container">
 		<div class="row" align="center">
-		<%@ include file="dbconn.jsp"%>
+		<%@ include file="../inc/dbconn.jsp"%>
 			<%
 				String sql = "select * from product";
 				pstmt = conn.prepareStatement(sql);
@@ -45,6 +45,6 @@
 		</div>
 		<hr>
 	</div>
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="../inc/footer.jsp" />
 </body>
 </html>

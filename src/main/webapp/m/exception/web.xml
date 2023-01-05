@@ -28,7 +28,7 @@
 		</form-login-config>
 	</login-config>
 	
-	<!-- 오류가 발생하였을 때 오류 상태와 오류 페이지를 출력하도록 작성 
+	<!-- 오류가 발생하였을 때 오류 상태와 오류 페이지를 출력하도록 작성 -->
 	<error-page>
 		<error-code>404</error-code>
 		<location>/m/exceptionNoPage.jsp</location>
@@ -44,5 +44,5 @@
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/08_exception/exceptionType_error.jsp</location>
 	</error-page>
--->
+
 </web-app>

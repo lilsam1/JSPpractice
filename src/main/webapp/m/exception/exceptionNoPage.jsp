@@ -5,21 +5,21 @@
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" >
 <meta charset="UTF-8">
-<title>주문 취소</title>
+<title>페이지 오류</title>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
+	<jsp:include page="../inc/menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">주문 취소</h1>
+			<h2 class="alert alert-danger">요청하신 페이지를 찾을 수 없습니다</h2>
 		</div>
 	</div>
 	<div class="container">
-		<h2 class="alert alert-danger">주문이 취소되었습니다</h2>
+		<p><%=request.getRequestURL()%></p>
+		<p>
+			<a href="products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+		</p>
 	</div>
-	<div class="container">
-		<p><a href="./products.jsp" class="btn btn-secondary"> &laquo; 상품 목록</a>
-	</div>
-	
+
 </body>
 </html>
