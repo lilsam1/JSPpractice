@@ -33,7 +33,6 @@
 	<c:set var="year" value="${birth.split('/')[0]}" />
 	<c:set var="month" value="${birth.split('/')[1]}" />
 	<c:set var="day" value="${birth.split('/')[2]}" />
-
 	<div class="container">
 		<form name="newMember" class="form-horizontal"  action="processUpdateMember.jsp" method="post" onsubmit="return checkForm()">
 			<div class="form-group  row">
