@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
@@ -16,6 +17,7 @@ import mvc.database.DBconnection;
 public class CartDAO {
 	private Connection connection = null;
 	private PreparedStatement preparedStatement = null;
+	private Statement statement = null;
 	private ResultSet resultSet = null;
 	
 	void connect() {
@@ -112,4 +114,41 @@ public class CartDAO {
 		return flag !=0;
 	}
 	
+	public boolean deleteCartById(String orderNo, int cartId) throws SQLException {
+		// 장바구니 개별 삭제
+		int flag = 0;
+		String sql = "SELECT * FROM cart WHERE orderNo = ? AND cartId = ?";
+		preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1, orderNo);
+		preparedStatement.setInt(2, cartId);
+		resultSet = preparedStatement.executeQuery();
+		if (resultSet.next()) {
+			sql = "DELETE FROM cart WHERE cartId = ?";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, cartId);
+			flag = preparedStatement.executeUpdate();
+		}
+		return flag == 1;
+	}
+
+	
+	public boolean deleteCart(String orderNo) throws SQLException {
+		// 장바구니 전체 삭제
+		int flag = 0;
+		String sql = "DELETE FROM cart WHERE orderNo = ?";
+		preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1, orderNo);
+		flag = preparedStatement.executeUpdate();
+		return flag != 0;
+
+	}
+	
+	public boolean deleteCartBySelId(String orderNo, String chkdId) throws SQLException {
+		int flag = 0;
+		String sql = "DELETE FROM cart WHRE orderNo = '" + orderNo + "' AND cartId IN (" + chkdId + ") ";
+		statement = connection.createStatement();
+		flag = statement.executeUpdate(sql);
+		return flag != 0;
+	}
+
 }
