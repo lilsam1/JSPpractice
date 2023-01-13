@@ -14,7 +14,7 @@ public class ProductDAO {
 	private PreparedStatement preparedStatement = null;
 	private ResultSet resultSet = null;
 	
-	// DB¿¬°á ¸Ş¼­µå
+	// DBå ì™ì˜™å ì™ì˜™ å ìŒ¨ì‡½ì˜™å ì™ì˜™
 	void connect() {
 		try {
 			connection = DBconnection.getConnection();
@@ -27,9 +27,9 @@ public class ProductDAO {
 	}
 	
 	public Product getProductById(String id) {
-		// Àü´ŞµÈ id¿¡ ÇØ´çÇÏ´Â »óÇ°À» µğºñ¿¡¼­ Á¶È¸ÇØ¼­
-		// 1) ÀÖ´Â °æ¿ì °´Ã¼¿¡ ´ã¾Æ¼­ Àü´Ş
-		// 2) ¾ø´Â °æ¿ì null Àü´Ş
+		// å ì™ì˜™å ìŒ¨ë“¸ì˜™ idå ì™ì˜™ å ìŒ”ëŒì˜™å ì‹¹ëŒì˜™ å ì™ì˜™í’ˆå ì™ì˜™ å ì™ì˜™æ¾ã€å ï¿½ å ì™ì˜™íšŒå ìŒ”ì‡½ì˜™
+		// 1) å ìŒëŒì˜™ å ì™ì˜™å ï¿½ å ì™ì˜™ì²´å ì™ì˜™ å ì™ì˜™í‹°å ï¿½ å ì™ì˜™å ì™ì˜™
+		// 2) å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ï¿½ null å ì™ì˜™å ì™ì˜™
 		Product product = null;
 		String sql = "select * from product where p_id = ?";
 		try {

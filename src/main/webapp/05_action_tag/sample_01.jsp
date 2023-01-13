@@ -13,7 +13,7 @@
 	<%@include file="sample_01_include.jsp" %>
 	<br>
 	<%
-		out.println(num1 * num2);
+		//out.println(num1 * num2);
 	%>
 </body>
 </html>

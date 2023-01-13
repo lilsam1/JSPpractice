@@ -13,33 +13,33 @@ public class BookRepository {
 	}
 	
 	public BookRepository() {
-		Book history = new Book("B1111", "ÃÑ, ±Õ, ¼è", 11000);
-		history.setAuthor("Á¦·¯µå ´ÙÀÌ¾Æ¸óµå");
-		history.setCategory("»çÈ¸°úÇĞ");
-		history.setDescription("¼­¿ï´ë µµ¼­°ü ´ëÃâ 1À§ µµ¼­ : ¹®¸íÀÇ ¹ß´ŞÀ» ÁÂ¿ìÇÏ´Â ÇÊ¼ö¿ä¼Ò¿¡ ´ëÇÑ ÀÇ¹ÌÀÖ´Â °íÂû");
-		history.setPublisher("¹®ÇĞ»ç»ó");
+		Book history = new Book("B1111", "å ì™ì˜™, å ì™ì˜™, å ì™ì˜™", 11000);
+		history.setAuthor("å ì™ì˜™å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì‹±ì•„ëªŒì˜™å ï¿½");
+		history.setCategory("å ì™ì˜™íšŒå ì™ì˜™å ì™ì˜™");
+		history.setDescription("å ì™ì˜™å ì™ì˜™å ï¿½ å ì™ì˜™å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ 1å ì™ì˜™ å ì™ì˜™å ì™ì˜™ : å ì™ì˜™å ì™ì˜™å ì™ì˜™ å ìŒ©ëŒì˜™å ì™ì˜™ å ìŠ¹ìš¸ì˜™å ì‹¹ëŒì˜™ å ì‹­ì‡½ì˜™å ì™ì˜™å¥´å ï¿½ å ì™ì˜™å ì™ì˜™ å ì‹¤ë±„ì˜™å ìŒëŒì˜™ å ì™ì˜™å ì™ì˜™");
+		history.setPublisher("å ì™ì˜™å ì‹»ì‚¼ì˜™å ï¿½");
 		history.setTotalPages(752);
 		history.setUnitsinStock(100);
 		history.setReleaseDate("2018/03/07");
-		history.setCondition("½Å±Ôµµ¼­");
+		history.setCondition("å ì‹ ê·œë“¸ì˜™å ì™ì˜™");
 		history.setFilename("B1111.jpg");
 		
-		Book novel = new Book("B1112", "ÇØ¸®Æ÷ÅÍ¿Í ºÒÀÇ ÀÜ", 35000);
-		novel.setAuthor("j.k.·Ñ¸µ");
-		novel.setCategory("¼Ò¼³");
-		novel.setDescription("ÇØ¸®Æ÷ÅÍ ½Ã¸®ÁîÀÇ ³× ¹øÂ° ±Ç");
-		novel.setPublisher("¹®ÇĞ¼öÃ¸");
+		Book novel = new Book("B1112", "å ìŒ”ëªŒì˜™å ì™ì˜™å ì‹¶ìš¸ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™", 35000);
+		novel.setAuthor("j.k.å ì‹¼ëªŒì˜™");
+		novel.setCategory("å ìŒ€ì‡½ì˜™");
+		novel.setDescription("å ìŒ”ëªŒì˜™å ì™ì˜™å ì™ì˜™ å ì‹œëªŒì˜™å ì™ì˜™å ì™ì˜™ å ì™ì˜™ å ì™ì˜™ì§¸ å ì™ì˜™");
+		novel.setPublisher("å ì™ì˜™å ì‹»ì‡½ì˜™ì²©");
 		novel.setTotalPages(1200);
 		novel.setUnitsinStock(120);
 		novel.setReleaseDate("2017/03/07");
-		novel.setCondition("Áß°íµµ¼­");
+		novel.setCondition("å ìŒ©ê³¤ì˜™å ì™ì˜™");
 		novel.setFilename("B1112.jpg");
 		
-		Book it = new Book("B1113", "ÀÚ¹ÙÀÇ Á¤¼®", 22000);
-		it.setAuthor("³²±Ã¼º");
+		Book it = new Book("B1113", "å ìŒ˜ë±„ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™", 22000);
+		it.setAuthor("å ì™ì˜™å ì‹œì‡½ì˜™");
 		it.setCategory("IT");
-		it.setDescription("ÄÚµùÀ» Ã³À½ ¹è¿ì´Â »ç¶÷À» À§ÇÑ ÀÔ¹®¼­");
-		it.setPublisher("µµ¿ìÃâÆÇ");
+		it.setDescription("å ìŒ˜ë“¸ì˜™å ì™ì˜™ ì²˜å ì™ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™å ï¿½ å ì™ì˜™å ì™ì˜™ å ìŒ‰ë±„ì˜™å ì™ì˜™");
+		it.setPublisher("å ì™ì˜™å ì™ì˜™å ì™ì˜™å ì™ì˜™");
 		it.setTotalPages(300);
 		it.setUnitsinStock(50);
 		it.setReleaseDate("2020/03/07");

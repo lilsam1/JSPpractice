@@ -15,7 +15,7 @@ public class ControllerServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// ÀÛ¾÷ÆíÀÇ¼ºÀ» À§ÇØ getÀ¸·Î µé¾î¿Â °ÍÀ» post·Î ¿¬°á½ÃÄÑ ÅëÀÏ
+		// å ìŒœì–µì˜™å ì™ì˜™å ì‹¤ì‡½ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ getå ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ postå ì™ì˜™ å ì™ì˜™å ì™ì˜™å ì™ì˜™å ï¿½ å ì™ì˜™å ì™ì˜™
 		doPost(req, resp);
 	}
 

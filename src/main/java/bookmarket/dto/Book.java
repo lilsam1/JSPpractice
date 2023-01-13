@@ -1,18 +1,18 @@
 package bookmarket.dto;
 
 public class Book {
-	private String booktid;		// µµ¼­ ¾ÆÀÌµğ
-	private String name;		// µµ¼­¸í
-	private Integer unitPrice;	// °¡°İ
-	private String author;		// ÀúÀÚ
-	private String description;	// ¼³¸í
-	private String publisher;	// ÃâÆÇ»ç
-	private String category;	// ºĞ·ù
-	private long unitsinStock;	// Àç°í ¼ö
-	private long totalPages;	// ÆäÀÌÁö ¼ö
-	private String releaseDate;	// ÃâÆÇÀÏ(¿ù/³â)
-	private String condition;	// ½Å±Ô µµ¼­ or Áß°í µµ¼­ or E-Book
-	private String filename;	// ÀÌ¹ÌÁö ÆÄÀÏ¸í
+	private String booktid;		// å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì‹±ë“¸ì˜™
+	private String name;		// å ì™ì˜™å ì™ì˜™å ì™ì˜™
+	private Integer unitPrice;	// å ì™ì˜™å ì™ì˜™
+	private String author;		// å ì™ì˜™å ì™ì˜™
+	private String description;	// å ì™ì˜™å ì™ì˜™
+	private String publisher;	// å ì™ì˜™å ì‹¤ì‚¼ì˜™
+	private String category;	// å ì‹»ë¤„ì˜™
+	private long unitsinStock;	// å ì™ì˜™å ï¿½ å ì™ì˜™
+	private long totalPages;	// å ì™ì˜™å ì™ì˜™å ì™ì˜™ å ì™ì˜™
+	private String releaseDate;	// å ì™ì˜™å ì™ì˜™å ì™ì˜™(å ì™ì˜™/å ì™ì˜™)
+	private String condition;	// å ì‹ ê¹ì˜™ å ì™ì˜™å ì™ì˜™ or å ìŒ©ê³¤ì˜™ å ì™ì˜™å ì™ì˜™ or E-Book
+	private String filename;	// å ì‹±ë±„ì˜™å ì™ì˜™ å ì™ì˜™å ì‹¹ëªŒì˜™
 	
 	public String getFilename() {
 		return filename;

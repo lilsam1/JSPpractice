@@ -33,7 +33,7 @@ public class CartDAO {
 	}
 	
 	public boolean updateCart(Product product, String orderNo, String memberId) {
-		// µ¿ÀÏÇÑ ÁÖ¹®¹øÈ£¿¡ °°Àº productId¸¸ ÀÖÀ¸¸é update, ¾øÀ¸¸é insert
+		// å ì™ì˜™å ì™ì˜™å ì™ì˜™ å ìŒë±„ì˜™å ì™ì˜™í˜¸å ì™ì˜™ å ì™ì˜™å ì™ì˜™ productIdå ì™ì˜™ å ì™ì˜™å ì™ì˜™å ì™ì˜™ update, å ì™ì˜™å ì™ì˜™å ì™ì˜™ insert
 		int flag = 0;
 		String productId = product.getProductId();
 		String sql = "select cartId from cart where orderNo = ? and productId = ?";
@@ -94,7 +94,7 @@ public class CartDAO {
 		int flag = 0;
 		String orderNo = session.getId();
 		String id = (String)session.getAttribute("sessionId");
-		// ÀÌÀü ·Î±×ÀÎ¿¡ ´ãÀº »óÇ° ¾÷µ¥ÀÌÆ®
+		// å ì™ì˜™å ì™ì˜™ å ì‹¸ê¹ì˜™å ì‹¸ìš¸ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™í’ˆ å ì™ì˜™å ì™ì˜™å ì™ì˜™íŠ¸
 		String sql = "UPDATE cart SET orderNo = ? WHERE memberId = ?";
 		try {
 			preparedStatement = connection.prepareStatement(sql);
@@ -102,7 +102,7 @@ public class CartDAO {
 			preparedStatement.setString(2, id);
 			flag = preparedStatement.executeUpdate();
 			
-			// ·Î±×ÀÎ Àü¿¡ ´ãÀº »óÇ° ¾÷µ¥ÀÌÆ®
+			// å ì‹¸ê¹ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™í’ˆ å ì™ì˜™å ì™ì˜™å ì™ì˜™íŠ¸
 			sql = "UPDATE cart SET memberId = ? WHERE orderNo = ?";
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, id);
@@ -115,7 +115,7 @@ public class CartDAO {
 	}
 	
 	public boolean deleteCartById(String orderNo, int cartId) throws SQLException {
-		// Àå¹Ù±¸´Ï °³º° »èÁ¦
+		// å ì™ì˜™è¢‚å ì™ì˜™å ï¿½ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™
 		int flag = 0;
 		String sql = "SELECT * FROM cart WHERE orderNo = ? AND cartId = ?";
 		preparedStatement = connection.prepareStatement(sql);
@@ -133,7 +133,7 @@ public class CartDAO {
 
 	
 	public boolean deleteCart(String orderNo) throws SQLException {
-		// Àå¹Ù±¸´Ï ÀüÃ¼ »èÁ¦
+		// å ì™ì˜™è¢‚å ì™ì˜™å ï¿½ å ì™ì˜™ì²´ å ì™ì˜™å ì™ì˜™
 		int flag = 0;
 		String sql = "DELETE FROM cart WHERE orderNo = ?";
 		preparedStatement = connection.prepareStatement(sql);

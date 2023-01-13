@@ -54,7 +54,8 @@
 		<servlet-name>myController</servlet-name>
 		<url-pattern>/13_mvc/ControllerServlet</url-pattern>
 	</servlet-mapping>
-	
+
+<!--  	
 	<servlet>
 		<servlet-name>BoardController</servlet-name>
 		<servlet-class>mvc.controller.BoardController</servlet-class>
@@ -63,5 +64,6 @@
 		<servlet-name>BoardController</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+-->	
 	
 </web-app>

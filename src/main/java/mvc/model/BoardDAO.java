@@ -21,13 +21,13 @@ public class BoardDAO {
 		return instance;
 	}
 	
-	// board Å×ÀÌºíÀÇ ·¹ÄÚµå °³¼ö
+	// board ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 	public int getListCount(String items, String text) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		int x = 0;	// ·¹ÄÚµå °³¼ö ÀúÀåÇÒ º¯¼ö
+		int x = 0;	// ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		String sql;
 		
@@ -44,7 +44,7 @@ public class BoardDAO {
 			if (rs.next())
 				x = rs.getInt(1);
 		} catch (Exception ex) {
-			System.out.println("getListCount() ¿¡·¯: " + ex);
+			System.out.println("getListCount() ï¿½ï¿½ï¿½ï¿½: " + ex);
 		} finally {
 			try {
 				if (rs != null)
@@ -60,7 +60,7 @@ public class BoardDAO {
 		return x;	
 	}
 	
-	// board Å×ÀÌºíÀÇ ·¹ÄÚµå °¡Á®¿À±â
+	// board ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public ArrayList<BoardDTO> getBoardList(int page, int limit, String items, String text) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -83,7 +83,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			// ResultSet.absolute(int index) : ResultSet Ä¿¼­¸¦ ¿øÇÏ´Â À§Ä¡(index)ÀÇ °Ë»öÇàÀ¸·Î ÀÌµ¿ÇÏ´Â ¸Þ¼­µå
+			// ResultSet.absolute(int index) : ResultSet Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ä¡(index)ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 			while (rs.absolute(index)) {
 				BoardDTO board = new BoardDTO();
 				board.setNum(rs.getInt("num"));
@@ -103,7 +103,7 @@ public class BoardDAO {
 			}
 			return list;
 		} catch (Exception ex) {
-			System.out.println("getBoardList() ¿¡·¯ : " + ex);
+			System.out.println("getBoardList() ï¿½ï¿½ï¿½ï¿½ : " + ex);
 		} finally {
 			try {
 				if (rs != null)
@@ -136,7 +136,7 @@ public class BoardDAO {
 			if (rs.next())
 				name = rs.getString("name");
 		} catch (Exception ex) {
-			System.out.println("getBoardByNum() ¿¡·¯: " + ex);
+			System.out.println("getBoardByNum() ï¿½ï¿½ï¿½ï¿½: " + ex);
 		} finally {
 			try {
 				if (rs != null)
@@ -152,7 +152,7 @@ public class BoardDAO {
 		return null;
 	}
 	
-	// board Å×ÀÌºí¿¡ »õ·Î¿î 
+	// board ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ 
 	public void insertBoard(BoardDTO board) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -169,11 +169,11 @@ public class BoardDAO {
 			pstmt.setString(5, board.getContent());
 			pstmt.setString(6, board.getRegist_day());
 			pstmt.setInt(7, board.getHit());
-			pstmt.setString(8, board.getId());
+			pstmt.setString(8, board.getIp());
 			
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
-			System.out.println("insertBoard() ¿¡·¯: " + ex);
+			System.out.println("insertBoard() ï¿½ï¿½ï¿½ï¿½: " + ex);
 		} finally {
 			try {
 				if (pstmt != null)
@@ -184,6 +184,135 @@ public class BoardDAO {
 				throw new RuntimeException(ex.getMessage());
 			}
 		}
+	}
+	
+	// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void updateBoard(BoardDTO board) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "UPDATE board SET name=?, subject=?, content=? WHERE num=?";
+			
+			conn = DBconnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, board.getName());
+			pstmt.setString(2, board.getSubject());
+			pstmt.setString(3, board.getContent());
+			pstmt.setInt(4, board.getNum());
+			
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			System.out.println("updateBoard() ï¿½ï¿½ï¿½ï¿½: " + ex);
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception ex) {
+				throw new RuntimeException(ex.getMessage());
+			}
+		}
+	}
+	
+	// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public BoardDTO getBoardByNum(int num, int page) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardDTO board = null;
+		
+		updateHit(num);
+		String sql = "SELECT * FROM board WHERE num = ? ";
+		
+		try {
+			conn  = DBconnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				board = new BoardDTO();
+				board.setNum(rs.getInt("num"));
+				board.setId(rs.getString("id"));
+				board.setName(rs.getString("name"));
+				board.setSubject(rs.getString("subject"));
+				board.setContent(rs.getString("content"));
+				board.setRegist_day(rs.getString("regist_day"));
+				board.setHit(rs.getInt("hit"));
+				board.setIp(rs.getString("ip"));
+			}
+			
+		} catch (Exception ex) {
+			System.out.println("getBoardByNum() ï¿½ï¿½ï¿½ï¿½: " + ex);
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception ex) {
+				throw new RuntimeException(ex.getMessage());
+			}
+		}
+		
+		return board;
+	}
+	
+	// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private void updateHit(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "UPDATE board SET hit = hit + 1 WHERE num = ? ";
+			
+			conn  = DBconnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			System.out.println("updateHit() ï¿½ï¿½ï¿½ï¿½: " + ex);
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception ex) {
+				throw new RuntimeException(ex.getMessage());
+			}
+		}
+		
+	}
+	
+	// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void deleteBoard(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "DELETE FROM board WHERE num = ? ";
+			
+			conn  = DBconnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			System.out.println("deleteBoard() ï¿½ï¿½ï¿½ï¿½: " + ex);
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception ex) {
+				throw new RuntimeException(ex.getMessage());
+			}
+		}
+		
 	}
 
 }

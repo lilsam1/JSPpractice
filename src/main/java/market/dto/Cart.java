@@ -2,12 +2,12 @@ package market.dto;
 
 public class Cart {
 	private int cartId;	//
-	private String memberId; 	// È¸¿ø ¾ÆÀÌµð
-	private String orderNo;		// ÁÖ¹® ¹øÈ£
-	private String p_id; 		// »óÇ°¾ÆÀÌµð
-	private String p_name;		// »óÇ°ÀÌ¸§
-	private int p_unitPrice;	//°¡°Ý
-	private int cnt;			// ¼ö·®
+	private String memberId; 	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
+	private String orderNo;		// ï¿½Ö¹ï¿½ ï¿½ï¿½È£
+	private String p_id; 		// ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ìµï¿½
+	private String p_name;		// ï¿½ï¿½Ç°ï¿½Ì¸ï¿½
+	private int p_unitPrice;	//ï¿½ï¿½ï¿½ï¿½
+	private int cnt;			// ï¿½ï¿½ï¿½ï¿½
 	
 	
 	public Cart() {

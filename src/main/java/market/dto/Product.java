@@ -2,16 +2,16 @@ package market.dto;
 
 public class Product {
 	
-	private String productId;	// »óÇ° ¾ÆÀÌµğ
-	private String pname;		// »óÇ°¸í
-	private Integer unitPrice;	// »óÇ° °¡°İ
-	private String description;	// »óÇ° ¼³¸í
-	private String manufacture;	// Á¦Á¶»ç
-	private String category;	// ºĞ·ù
-	private long unitsInStock;	// Àç°í¼ö
-	private String condition;	// ½Å»óÇ° or Áß°íÇ° or Àç»ıÇ°
-	private String filename;	// ÀÌ¹ÌÁö ÆÄÀÏ¸í
-	private int quantity;		// Àå¹Ù±¸´Ï¿¡ ´ãÀº °³¼ö
+	private String productId;	// å ì™ì˜™í’ˆ å ì™ì˜™å ì‹±ë“¸ì˜™
+	private String pname;		// å ì™ì˜™í’ˆå ì™ì˜™
+	private Integer unitPrice;	// å ì™ì˜™í’ˆ å ì™ì˜™å ì™ì˜™
+	private String description;	// å ì™ì˜™í’ˆ å ì™ì˜™å ì™ì˜™
+	private String manufacture;	// å ì™ì˜™å ì™ì˜™å ì™ì˜™
+	private String category;	// å ì‹»ë¤„ì˜™
+	private long unitsInStock;	// å ì™ì˜™å ì™ì˜™
+	private String condition;	// å ì‹ ì‚¼ì˜™í’ˆ or å ìŒ©ê³¤ì˜™í’ˆ or å ì™ì˜™å ì‹¤ï¿½
+	private String filename;	// å ì‹±ë±„ì˜™å ì™ì˜™ å ì™ì˜™å ì‹¹ëªŒì˜™
+	private int quantity;		// å ì™ì˜™è¢‚å ì™ì˜™è‡¼å ï¿½ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™
 	
 	public int getQuantity() {
 		return quantity;
@@ -103,7 +103,7 @@ public class Product {
 		this.condition = condition;
 	}
 
-	/* ¿À·ù È®ÀÎ¿ë
+	/* å ì™ì˜™å ì™ì˜™ í™•å ì‹¸ìš¸ì˜™
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", pname=" + pname + ", unitPrice=" + unitPrice + ", description="

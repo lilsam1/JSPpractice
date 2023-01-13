@@ -2,7 +2,7 @@ package user;
 
 public class Person {
 	private int id = 20181004;
-	private String name = "±èÃ¶¼ö";
+	private String name = "ï¿½ï¿½Ã¶ï¿½ï¿½";
 	
 	public Person() {
 		
